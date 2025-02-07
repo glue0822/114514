@@ -14,7 +14,7 @@ front_message.pack()
 #留白
 text_canvas=Canvas(hall_ui,height=20,width=350,bg='red')
 text_canvas.pack()
-text_canvas.create_text(175,10,text='Welcome,'+str(name.read()),fill='white')
+text_canvas.create_text(175,20,text='Welcome,'+str(name.read()),fill='white')
 name.close()
 hall_ui.update()
 def open_games():
