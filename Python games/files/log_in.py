@@ -9,10 +9,10 @@ canvas.pack()
 pin_file=open(r'.\data\pin.ini','r+')
 #打开密码文件
 pin_file.seek(0,0)
-len_pin_num=str(len(pin_file.read()))
+len_pin_num=int(len(pin_file.read()))
 #读出密码有多长，以便接下来做判断
 pin_file.seek(0,0)
-if len_pin_num == '0':
+if len_pin_num == 0:
     window.title('New PIN')
     canvas.create_text(150,10,text='Please enter you PIN:')
     input_field=Entry(window,width=40,exportselection=False)
