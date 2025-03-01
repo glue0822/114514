@@ -3,10 +3,11 @@ from time import sleep,time
 from random import randint
 from math import sqrt
 import subprocess
+import sys
 try:
     from PIL import ImageTk,Image
 except ModuleNotFoundError:
-    raise SystemExit(0)
+    sys.exit()
 feeling_brave=True
 #导入模块
 ship_speed=5
@@ -170,7 +171,7 @@ while time() <end and score < target:
         if end-time() < 50:
             sea.itemconfig(target_text,state=HIDDEN)
     except TclError:
-        raise SystemExit(0)    #这行代码会导致Windows Defender将此文件打包后的exe识别成病毒(T_T),但不加会报错
+        sys.exit()    #这行代码会导致Windows Defender将此文件打包后的exe识别成病毒(T_T),但不加会报错
     finally:
         sleep(0.01)
 #主循环
